@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror World</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #6b73ff 0%, #3a3f9e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Имитация звездочек на фоне */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 
+                50px 100px white, 200px 50px white, 300px 300px white, 
+                100px 400px white, 350px 150px white, 50px 500px white,
+                250px 450px white, 10px 250px white;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        body::after {
+            width: 2px;
+            height: 2px;
+            box-shadow: 
+                150px 200px white, 250px 350px white, 80px 150px white, 
+                380px 400px white, 180px 50px white, 20px 350px white;
+            opacity: 0.5;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px 20px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-circle {
+            width: 100px;
+            height: 100px;
+            background: #2AABEE;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(42, 171, 238, 0.4);
+        }
+
+        .logo-circle svg {
+            width: 50px;
+            height: 50px;
+            fill: white;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px 15px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .subscribe-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(to right, #24a4e8, #188bc8);
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(36, 164, 232, 0.3);
+        }
+
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(36, 164, 232, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-circle">
+            <svg viewBox="0 0 24 24">
+                <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42l10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001l-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15l4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"/>
+            </svg>
+        </div>
+
+        <h1>Mirror World</h1>
+        
+        <p class="description">
+            Будьте в курсе всех новостей, акций и специальных предложений. Подпишитесь прямо сейчас!
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-title">Быстрые новости</div>
+                <div class="feature-text">Узнавайте первыми о всех обновлениях</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <div class="feature-title">Эксклюзивы</div>
+                <div class="feature-text">Специальные предложения только для подписчиков</div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">Удобство</div>
+                <div class="feature-text">Все важное в одном месте</div>
+            </div>
+        </div>
+
+        <a href="https://t.me/+2urBnEpPZEg3YjJi" class="subscribe-btn">Подписаться на Mirror World</a>
+    </div>
+
+</body>
+  </html>
